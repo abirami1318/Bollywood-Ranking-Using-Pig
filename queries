@@ -1,0 +1,16 @@
+=========================top 10 actors give google hit=========================
+orderbyhit = order movie by googlehits desc;
+top10 = limit orderbyhit 10;
+dump top10;
+store top10 into '/17L103/pig/Bollywoodmovie/Output';
+======================normalized movie rank greater than 8=====================
+movierank = filter movie by normmovierank>8.0;
+dump movierank;
+store movierank into '/17L103/pig/Bollywoodmovie/movirank';
+=======================actors movie count greater than 25======================
+moviecount = filter movie by moviecount>25;
+store moviecount into '/17L103/pig/Bollywoodmovie/moviecount';
+===========================Order by Normalized Rating==========================
+orderbyrating = order movie by normrating desc;
+store orderbyrating into '/17L103/pig/Bollywoodmovie/orderbyrating';
+
